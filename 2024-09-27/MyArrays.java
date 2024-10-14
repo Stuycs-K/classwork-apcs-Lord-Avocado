@@ -6,6 +6,11 @@ public class MyArrays {
     int[] a2 = new int[] {};
     System.out.println(arrayToString(a1));
     System.out.println(arrayToString(a2));
+    int[] b1 = returnCopy(a1);
+    System.out.println(arrayToString(b1));
+    a1[3] = 7;
+    System.out.println(arrayToString(a1));
+    System.out.println(arrayToString(b1));
   }
   public static String arrayToString(int[] nums) {
     if (nums.length == 0) {return "[]";}
@@ -21,5 +26,18 @@ public class MyArrays {
       }
     }
     return value;
+  }
+
+  public static int[] returnCopy(int[] arr) {
+    //
+    int[] c1 = new int[arr.length];
+    for (int i = 0; i < arr.length; i++) {
+      c1[i] = arr[i];
+    }
+    return c1;
+  }
+  public static int[] concatArray(int[]arr1, int[]arr2) {
+    //
+    return null;
   }
 }
