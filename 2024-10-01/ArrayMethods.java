@@ -18,6 +18,13 @@ public class ArrayMethods {
     // finally, testing swapRC
     int[][] c1 = new int[][] {{1, 2, 3}, {4, 5, 6}};
     System.out.println(arrayToString(swapRC(c1))); // should return {{1, 4}, {2, 5}, {3, 6}}
+
+    // testing replaceNegative
+    int[][] d1 = new int[][] {{1, -1, 0}, {-48, -49, 23}};
+    replaceNegative(d1);
+    System.out.println(arrayToString(d1));
+
+    //
   }
 
   public static String arrayToString(int[] nums) {
@@ -82,5 +89,38 @@ public class ArrayMethods {
       }
     }
     return value;
+  }
+
+
+
+
+  // classwork 10/01/2024
+
+
+  // modify given array as follows:
+  // replace all negative values:
+  // if row # = col # replace with 1
+  // else replace with 0
+  public static void replaceNegative(int[][] vals) {
+    //
+    for (int i = 0; i < vals.length; i++) {
+      for (int j = 0; j < vals[i].length; j++) {
+        if (vals[i][j] < 0) {
+          if (i == j) {
+            vals[i][j] = 1;
+          } else {
+            vals[i][j] = 0;
+          }
+        }
+      }
+    }
+    // not returning anything since this is a void function
+  }
+
+
+
+  // Make a copy of given 2D array; make sure changing original does not change copy
+  public static int[][] copy(int[][] nums) {
+    // 
   }
 }
