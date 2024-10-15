@@ -24,7 +24,13 @@ public class ArrayMethods {
     replaceNegative(d1);
     System.out.println(arrayToString(d1));
 
-    //
+    //testing  copy
+    int[][] e1 = new int[][] {{0, 1, 2}, {1, 2, 3, 4}, {5, 6, 7, 8, 9}, {0}};
+    int[][] e2 = copy(e1);
+    e1[0][1] = 10;
+    e1[2][3] = 88;
+    System.out.println(arrayToString(e1));
+    System.out.println(arrayToString(e2));
   }
 
   public static String arrayToString(int[] nums) {
@@ -121,6 +127,15 @@ public class ArrayMethods {
 
   // Make a copy of given 2D array; make sure changing original does not change copy
   public static int[][] copy(int[][] nums) {
-    // 
+    int[][] value = new int[nums.length][];
+    for (int i = 0; i < nums.length; i++) {
+      //
+      // value[i].length = nums[i].length;
+      value[i] = new int[nums[i].length];
+      for (int j = 0; j < nums[i].length; j++) {
+        value[i][j] = nums[i][j];
+      }
+    }
+    return value;
   }
 }
