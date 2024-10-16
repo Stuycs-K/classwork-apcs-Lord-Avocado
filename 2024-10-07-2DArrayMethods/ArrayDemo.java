@@ -78,4 +78,20 @@ public class ArrayDemo{
     }
     return total;
   }
+
+  // replace negatives where row = column with 1, else with 0
+  public static void replaceNegative(int[][] nums) {
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        if (nums[i][j] < 0) {
+          if (i == j) {
+            nums[i][j] = 1;
+          } else {
+            nums[i][j] = 0;
+          }
+        }
+      }
+    }
+    // nothing to return because this function is void
+  }
 }
