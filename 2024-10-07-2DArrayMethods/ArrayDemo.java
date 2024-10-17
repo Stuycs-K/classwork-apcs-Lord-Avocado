@@ -13,6 +13,20 @@ public class ArrayDemo{
     int[] b1 = new int[] {5, 23, 62, 17, 3025};
     System.out.println(Arrays.toString(b1));
     System.out.println(arrayToString(b1));
+    System.out.println("\n");
+    int[][] c1 = new int[][] {{0, 1, 2, 3, 4, 5, 6, 7, 8}, {1, 0}, {0}, {3}, {}};
+    System.out.println(Arrays.deepToString(c1));
+    int c2 = countZeros2D(c1);
+    System.out.println(c2); // should print 3
+    System.out.println("\n");
+    // testing arr2DSum
+    System.out.println(arr2DSum(c1)); // should print 40
+    // System.out.println(Arrays.deepToString(c1));
+    System.out.println("\n");
+    int[][] d1 = new int[][] {{0, -1, -3, -4}, {-6, -7, -12, -100}, {1, 3, -1}, {}};
+    System.out.println(Arrays.deepToString(d1));
+    replaceNegative(d1);
+    System.out.println(Arrays.deepToString(d1));
     //
   }
 
