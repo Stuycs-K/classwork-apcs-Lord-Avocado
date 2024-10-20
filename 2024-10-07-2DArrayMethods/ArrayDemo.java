@@ -27,7 +27,22 @@ public class ArrayDemo{
     System.out.println(Arrays.deepToString(d1));
     replaceNegative(d1);
     System.out.println(Arrays.deepToString(d1));
-    //
+    System.out.println("\n");
+    // testing copy
+    int[][] e1 = new int[][] {{0, 1, 2}, {1, 2, 3, 4}, {5, 6, 7, 8, 9}, {0}};
+    int[][] e2 = copy(e1);
+    e1[0][1] = 10;
+    e1[2][3] = 88;
+    System.out.println(arrayToString(e1));
+    System.out.println(arrayToString(e2));
+    System.out.println("\n");
+    // testing swapRC
+    int[][] f1 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+    System.out.println(arrayToString(swapRC(f1))); // should return {{1, 4}, {2, 5}, {3, 6}}
+    System.out.println("\n");
+    // testing htmlTable
+    int[][] g1 = new int[][] {{1, 2}, {3}};
+    System.out.println(htmlTable(g1)); // should return "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   }
 
   //arrToString method from before
@@ -107,5 +122,56 @@ public class ArrayDemo{
       }
     }
     // nothing to return because this function is void
+  }
+
+  // return a copy of the given 2D array; make sure changing original does not change copy
+  public static int[][] copy(int[][] nums) {
+    int[][] value = new int[nums.length][];
+    for (int i = 0; i < nums.length; i++) {
+      //
+      // value[i].length = nums[i].length;
+      value[i] = new int[nums[i].length];
+      for (int j = 0; j < nums[i].length; j++) {
+        value[i][j] = nums[i][j];
+      }
+    }
+    return value;
+  }
+
+
+  // rotate array by switching rows and cols; you may assume the array is rectangular and neither rows or cols = 0
+  public static int[][] swapRC(int[][] nums) {
+    //
+    int rows = nums.length; // get the number of rows
+    int cols = nums[0].length; // get the number of columns; since array is rectangular nums[0].length = nums[1].length...etc
+    int[][] value = new int[cols][rows]; // make new array with rows and cols swapped
+    for (int i = 0; i < value.length; i++) {
+      //for rows of value, aka columns of nums
+      for (int j = 0; j < value[i].length; j++) {
+        //for columns of value, aka rows of nums
+        value[i][j] = nums[j][i];
+      }
+    }
+    return value;
+  }
+
+  // make HTML table by putting table tags around entire 2D array
+  // <tr> around rows, <td> around values
+  public static String htmlTable(int[][] nums) {
+    //
+    String value = "<table>";
+    for (int i = 0; i < nums.length; i++) {
+      value += "<tr>";
+      for (int j = 0; j < nums[i].length; j++) {
+        value += "<td>";
+        value += nums[i][j];
+        value += "</td>";
+        if (j == nums[i].length - 1) {
+          value += "</tr>";
+        }
+      }
+    }
+    value += "</table>";
+    return value;
   }
 }
