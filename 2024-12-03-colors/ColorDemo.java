@@ -34,6 +34,12 @@ public class ColorDemo {
     System.out.println(CLEAR_SCREEN);
     color(34, 35);
     System.out.println("Done......ow, my eyes hurt...");
+    sleep(3000);
+    System.out.println(RESET);
+    // sleep(1000);
+    System.out.println(CLEAR_SCREEN);
+    // color(33, 30);
+    System.out.println("Back to normal");
 
   }
   public static void color(int foreground,int background){
