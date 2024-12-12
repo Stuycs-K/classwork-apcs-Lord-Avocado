@@ -18,7 +18,13 @@ public class Driver {
   }
   public static ArrayList<Integer> generateArray(int length, int range, int shift) {
     // first make a new ArrayList<Integer>
-    return;
+    ArrayList<Integer> arr = new ArrayList<Integer>();
+    for (int i = 0; i < length; i++) {
+      // 
+      int rand = new Integer(Math.random() * range + shift);
+      arr.add(rand);
+    }
+    return arr;
   }
   public static void drawHorizontal(char a, String fcolor, String bcolor) {
     // 
