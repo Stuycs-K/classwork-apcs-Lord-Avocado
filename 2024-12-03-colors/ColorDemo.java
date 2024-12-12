@@ -27,7 +27,13 @@ public class ColorDemo {
     System.out.println(CYAN + "Cyan text!");
     System.out.println(WHITE + "White text!");
 
-
+    go(0, 0);
+    color(30, 32);
+    System.out.println("Waiting...");
+    sleep(2000);
+    System.out.println(CLEAR_SCREEN);
+    color(34, 35);
+    System.out.println("Done......ow, my eyes hurt...");
 
   }
   public static void color(int foreground,int background){
@@ -40,7 +46,7 @@ public class ColorDemo {
       try{
         Thread.sleep(milli);
       } catch(Exception e){
-        // 
+        //
       }
     }
 }
