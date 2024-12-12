@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class Driver {
+public class ColorScreen {
   // 
   public static void main(String[] args) {
     // 1. create 80x80 border of color (can be multiple, including foreground and background) around the screen. Should be 1 character thick.
@@ -12,6 +13,9 @@ public class Driver {
     // 6. (DO THIS AFTER EVERYTHING ELSE) move cursor to line 31 before program exits; otherwise, your terminal will draw over your screen.
     // 7. Extra: draw something in the middle of your screen (before you move your cursor to the end).
     // 
+    System.out.println("Hello World!"); // test
+    ArrayList<Integer> a1 = generateArray(3, 99, 0);
+    System.out.println(a1);
   }
   public static void createBorder(int x, int y, String fcolor, String bcolor, int thickness) {
     // 
@@ -21,7 +25,7 @@ public class Driver {
     ArrayList<Integer> arr = new ArrayList<Integer>();
     for (int i = 0; i < length; i++) {
       // 
-      int rand = new Integer(Math.random() * range + shift);
+      int rand = new Integer( (int) (Math.random() * range + shift));
       arr.add(rand);
     }
     return arr;
