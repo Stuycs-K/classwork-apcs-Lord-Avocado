@@ -54,8 +54,13 @@ public class Driver {
     Text.color(b3);
     System.out.print(a1.get(2));
     // at end of program go back to end
-    Text.go(31, 81);
+    // Text.go(31, 81);
+    // Text.color(Text.YELLOW);
+    Text.go(3, 2); // y, x
+    drawHorizontal('-', Text.YELLOW, 0);
     // Text.sleep(5000);
+    // at the end of the program go back to the end
+    Text.go(31, 81);
     System.out.println(Text.RESET);
     System.out.println("Done!");
   }
@@ -88,8 +93,20 @@ public class Driver {
     }
     return arr;
   }
-  public static void drawHorizontal(char a, String fcolor, String bcolor) {
+  public static void drawHorizontal(char a, int fcolor, int bcolor) {
     //
+    if (bcolor == 0) {
+      // "0" means no background color
+      Text.color(fcolor);
+    } else {
+      Text.color(fcolor, bcolor+10);
+    }
+    String horizontal = "";
+    for (int i = 0; i < 77; i++) {
+      horizontal += a;
+    }
+    System.out.println(horizontal);
+    System.out.println(Text.RESET); // to reset the color
   }
   public static void endProgram() {
     //
