@@ -30,7 +30,7 @@ public class Driver {
     } else {
       b1 = Text.WHITE;
     }
-    System.out.println(b1);
+    // System.out.println(b1);
     if ((int) a1.get(1) < 25) {
       b2 = Text.RED;
     } else if ((int) a1.get(1) > 75) {
@@ -38,7 +38,7 @@ public class Driver {
     } else {
       b2 = Text.WHITE;
     }
-    System.out.println(b2);
+    // System.out.println(b2);
     if ((int) a1.get(2) < 25) {
       b3 = Text.RED;
     } else if ((int) a1.get(2) > 75) {
@@ -46,8 +46,13 @@ public class Driver {
     } else {
       b3 = Text.WHITE;
     }
-    System.out.println(b3);
-    System.out.println(Text.color(b1) + a1.get(0) + "                                   " + Text.color(b2) + a1.get(1) + "                                   " + Text.color(b3) + a1.get(2));
+    // System.out.println(b3);
+    Text.color(b1);
+    System.out.print(a1.get(0) + "                                   ");
+    Text.color(b2);
+    System.out.print(a1.get(1) + "                                   ");
+    Text.color(b3);
+    System.out.print(a1.get(2));
     // at end of program go back to end
     Text.go(31, 81);
     // Text.sleep(5000);
