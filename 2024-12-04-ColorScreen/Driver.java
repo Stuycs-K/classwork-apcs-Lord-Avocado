@@ -20,38 +20,60 @@ public class Driver {
     //
     System.out.println();
     Text.go(2, 2);
+    boolean isBright1 = false;
+    boolean isBright2 = false;
+    boolean isBright3 = false;
     int b1;
     int b2;
     int b3;
     if ((int) a1.get(0) < 25) {
       b1 = Text.RED;
+      isBright1 = true;
     } else if ((int) a1.get(0) > 75) {
       b1 = Text.GREEN;
+      isBright1 = true;
+      isBright1 = true;
     } else {
       b1 = Text.WHITE;
     }
     // System.out.println(b1);
     if ((int) a1.get(1) < 25) {
       b2 = Text.RED;
+      isBright2 = true;
     } else if ((int) a1.get(1) > 75) {
       b2 = Text.GREEN;
+      isBright2 = true;
     } else {
       b2 = Text.WHITE;
     }
     // System.out.println(b2);
     if ((int) a1.get(2) < 25) {
       b3 = Text.RED;
+      isBright3 = true;
     } else if ((int) a1.get(2) > 75) {
       b3 = Text.GREEN;
+      isBright3 = true;
     } else {
       b3 = Text.WHITE;
     }
     // System.out.println(b3);
-    Text.color(b1);
+    if (isBright1) {
+      Text.color(b1, Text.BRIGHT);
+    } else {
+      Text.color(b1);
+    }
     System.out.print(a1.get(0) + "                                   ");
-    Text.color(b2);
+    if (isBright2) {
+      Text.color(b2, Text.BRIGHT);
+    } else {
+      Text.color(b2);
+    }
     System.out.print(a1.get(1) + "                                   ");
-    Text.color(b3);
+    if (isBright3) {
+      Text.color(b3, Text.BRIGHT);
+    } else {
+      Text.color(b3);
+    }
     System.out.print(a1.get(2));
     // at end of program go back to end
     // Text.go(31, 81);
