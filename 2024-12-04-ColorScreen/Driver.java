@@ -32,11 +32,9 @@ public class Driver {
     } else if ((int) a1.get(0) > 75) {
       b1 = Text.GREEN;
       isBright1 = true;
-      isBright1 = true;
     } else {
       b1 = Text.WHITE;
     }
-    // System.out.println(b1);
     if ((int) a1.get(1) < 25) {
       b2 = Text.RED;
       isBright2 = true;
@@ -46,7 +44,6 @@ public class Driver {
     } else {
       b2 = Text.WHITE;
     }
-    // System.out.println(b2);
     if ((int) a1.get(2) < 25) {
       b3 = Text.RED;
       isBright3 = true;
@@ -56,7 +53,6 @@ public class Driver {
     } else {
       b3 = Text.WHITE;
     }
-    // System.out.println(b3);
     if (isBright1) {
       Text.color(b1, Text.BRIGHT);
     } else {
@@ -75,15 +71,10 @@ public class Driver {
       Text.color(b3);
     }
     System.out.print(a1.get(2));
-    // at end of program go back to end
-    // Text.go(31, 81);
-    // Text.color(Text.YELLOW);
     Text.go(3, 2); // y, x
     drawHorizontal('-', Text.YELLOW, 0);
-    // Text.sleep(5000);
     // at the end of the program go back to the end
-    Text.go(31, 81);
-    System.out.println(Text.RESET);
+    endProgram(false, 31, 0);
     System.out.println("Done!");
   }
   public static void createBorder(int x, int y, int fcolor, int bcolor) {
@@ -130,7 +121,12 @@ public class Driver {
     System.out.println(horizontal);
     System.out.println(Text.RESET); // to reset the color
   }
-  public static void endProgram() {
+  public static void endProgram(boolean clear, int y, int x) {
     //
+    System.out.println(Text.RESET);
+    if (clear) {
+      System.out.println(Text.CLEAR_SCREEN);
+    }
+    Text.go(y, x);
   }
 }
