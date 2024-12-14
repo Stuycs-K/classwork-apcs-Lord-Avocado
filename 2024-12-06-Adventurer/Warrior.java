@@ -33,19 +33,19 @@ public class Warrior extends Adventurer {
   }
   public String attack(Adventurer other) {
     //
-    other.setHP(other.getHP - 5);
+    other.setHP(other.getHP() - 5);
     return "You attacked someone and they lost 5 HP!";
   }
   public String support(Adventurer other) {
     //
-    other.setHP(other.getHP + 5);
+    other.setHP(other.getHP() + 5);
     return "You supported someone else and they gained 5 HP!";
   }
   public String support() {
     //
     setHP(getHP() + 5);
     durability += 2;
-    if (durablity > maxDurability) {
+    if (durability > maxDurability) {
       durability = maxDurability;
     }
     return "You healed yourself and gained 5 HP and 2 durability!";
